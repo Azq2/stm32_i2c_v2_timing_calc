@@ -306,8 +306,8 @@ int main(int argc, char *argv[]) {
 		std::cerr << "\n";
 		std::cerr << "Global options:\n";
 		std::cerr << "  -h, --help               show this help\n";
-		std::cerr << "  -b, --bus-clock FILE     I2C bus clock [8000000]\n";
-		std::cerr << "  -s, --speed FILE         I2C speed [100000]\n";
+		std::cerr << "  -b, --bus-clock HZ       I2C bus clock [8000000]\n";
+		std::cerr << "  -s, --speed HZ           I2C speed [100000]\n";
 		std::cerr << "  -a, --use-analog-filter  use analog filter [false]\n";
 		std::cerr << "\n";
 	};
