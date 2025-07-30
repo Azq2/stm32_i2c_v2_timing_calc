@@ -1,0 +1,9 @@
+build
+build-win
+build-wasm
+.cache
+*.vkp
+*.ini
+*.exe
+node_modules
+.idea
