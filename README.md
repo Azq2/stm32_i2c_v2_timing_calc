@@ -4,17 +4,10 @@ A command-line utility to compute timing values for the STM32 I2C v2 peripheral 
 
 Supports Standard Mode (100 kHz), Fast Mode (400 kHz), and Fast Mode Plus (1 MHz), taking into account analog filter settings and the I2C peripheral input clock.
 
-> [!] For STM32 microcontrollers with I2C v2 peripheral (e.g. STM32F0, STM32F3, STM32L0, STM32L4).
+> [!NOTE]
+> For STM32 microcontrollers with I2C v2 peripheral (e.g. STM32F0, STM32F3, STM32L0, STM32L4).
 
----
-
-## Source
-
-Timing calculation logic adapted from the [Zephyr RTOS project](https://github.com/zephyrproject-rtos/zephyr/blob/7efa5c87dde1bf82ab8cf6cff300025c04daee76/drivers/i2c/i2c_ll_stm32_v2.c).
-
----
-
-## 🛠️ Build
+## Build
 
 ```bash
 cmake -B build
@@ -38,8 +31,8 @@ stm32_i2c_v2_timing_calc [options]
 | Option                      | Description                       | Default   |
 | --------------------------- | --------------------------------- | --------- |
 | `-h`, `--help`              | Show help message                 | —         |
-| `-b`, `--bus-clock` FILE    | I2C peripheral input clock (Hz)   | `8000000` |
-| `-s`, `--speed` FILE        | Desired I2C bus speed (Hz)        | `100000`  |
+| `-b`, `--bus-clock` HZ      | I2C peripheral input clock (Hz)   | `8000000` |
+| `-s`, `--speed` HZ          | Desired I2C bus speed (Hz)        | `100000`  |
 | `-a`, `--use-analog-filter` | Enable analog filter compensation | `false`   |
 
 ---
@@ -75,3 +68,7 @@ i2c_set_scl_high_period(I2C1, 10);
 i2c_set_data_hold_time(I2C1, 0);
 i2c_set_data_setup_time(I2C1, 5);
 ```
+
+## Credits
+
+Timing calculation logic adapted from the [Zephyr RTOS project](https://github.com/zephyrproject-rtos/zephyr/blob/7efa5c87dde1bf82ab8cf6cff300025c04daee76/drivers/i2c/i2c_ll_stm32_v2.c).
